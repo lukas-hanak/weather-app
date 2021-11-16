@@ -1,28 +1,18 @@
 import React from 'react'
-import logo from './logo.svg'
+import cityBackground from './assets/city-background.png'
 import './App.css'
+import CityWeather from './components/city-weather/CityWeather'
+import { useWeather } from './api/useWeather/useWeather'
 
 const App = () => {
+
+    const [city, isLoading, error] = useWeather('Bratislava')
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Edit
-                    {' '}
-                    <code>src/App.tsx</code>
-                    {' '}
-                  and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                  Learn React
-                </a>
-            </header>
+        <div className='app'>
+            <img src={cityBackground}  className='img-fluid' alt='' />
+            <p>{city}</p>
+            <CityWeather cityName='Bratislava' countryName='Slovakia' />
         </div>
     )
 }
