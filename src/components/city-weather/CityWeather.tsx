@@ -3,15 +3,19 @@ import CityWeatherHeader from './header/CityWeatherHeader'
 import CityWeatherDetail from './detail/CityWeatherDetail'
 
 interface CityWeatherProps {
-    cityName: string;
-    countryName: string;
+    city: string;
+    country: string;
+    onShowCitySelect: () => void;
 }
 
-const CityWeather: React.FC<CityWeatherProps> = ({ cityName, countryName }) => {
+const CityWeather: React.FC<CityWeatherProps> = ({ city, country, onShowCitySelect }) => {
 
     return (
-        <div className='city-weather-container shadow'>
-            <CityWeatherHeader name={`${cityName}, ${countryName}`} />
+        <div className='city-weather-container shadow text-center'>
+            <CityWeatherHeader
+                name={`${city}, ${country}`}
+                onShowCitySelect={onShowCitySelect}
+            />
             <CityWeatherDetail/>
         </div>
     )

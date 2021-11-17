@@ -1,15 +1,15 @@
-import UseApi from '../useApi/UseApi'
+import UseApi from '../use-api/UseApi'
 import { useEffect, useState } from 'react'
 import { AxiosError } from 'axios'
 
-export const useWeather = (town: string): [string, boolean, (AxiosError | null)] =>  {
+export const useWeather = (q: string): [string, boolean, (AxiosError | null)] =>  {
     const [city, setCity] = useState('')
 
     const [
         { data: getResult, loading: isLoading, error }
     ] = UseApi({
         method: 'GET',
-        params: { q: town }
+        params: { q }
     })
 
     useEffect(() => {

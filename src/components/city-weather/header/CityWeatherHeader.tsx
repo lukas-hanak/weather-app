@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import PlaceIcon from '../../../assets/place-icon.svg'
 
 interface CityWeatherHeaderProps {
     name: string;
+    onShowCitySelect: () => void;
 }
 
-const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name }) => {
+const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name, onShowCitySelect }) => {
 
     const getDate = () => {
         const currentDate = new Date()
@@ -19,15 +20,20 @@ const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name }) => {
         return `${dayName}, ${dayNumber} ${monthName} ${yearNumber} | ${time}`
     }
 
+    const onCityButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+        onShowCitySelect()
+    }
+
     return (
         <div className='d-flex'>
             <p className='p-2 header-time'>{getDate()}</p>
-            <div className='header-name-wrap'>
+            <button className='header-name-button' onClick={onCityButtonClick}>
                 <h2 className='p-2 header-city-name'>
                     {name}
                     <img src={PlaceIcon} alt='place-icon' className='mx-2' />
                 </h2>
-            </div>
+            </button>
         </div>
     )
 }

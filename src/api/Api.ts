@@ -3,12 +3,11 @@ import { config } from '../config/Config'
 
 const api = axios.create({
     baseURL: config.weatherApiUrl,
-    timeout: 0,
+    timeout: 3000,
     headers: {
-        'Accept-Encoding': 'identity',
+        'Content-Type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
-        'withCredentials': 'true',
-        'App-Language': 'CZ'
+        'mode': 'no-cors'
     }
 })
 
