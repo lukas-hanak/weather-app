@@ -1,9 +1,9 @@
 import React from 'react'
 
 interface CityWeatherDetailRowUIProps {
-    style?: string;
+    style?: string
     // eslint-disable-next-line no-undef
-    children: JSX.Element | JSX.Element[];
+    children: JSX.Element | JSX.Element[]
 }
 
 const CityWeatherDetailRowUI: React.FC<CityWeatherDetailRowUIProps> = ({

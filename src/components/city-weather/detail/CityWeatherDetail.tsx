@@ -18,7 +18,7 @@ import AirIcon from '../../../assets/air.svg'
 import { roundTemperature } from '../../../utils/Utils'
 
 interface CityWeatherDetailProps {
-    cityWeather: CityWeatherInterface;
+    cityWeather: CityWeatherInterface
 }
 
 const CityWeatherDetail: React.FC<CityWeatherDetailProps> = ({ cityWeather }) => {

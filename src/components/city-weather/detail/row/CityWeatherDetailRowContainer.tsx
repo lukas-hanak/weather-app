@@ -1,9 +1,9 @@
 import React from 'react'
 
 interface CityWeatherDetailRowContainerProps {
-    style?: string;
+    style?: string
     // eslint-disable-next-line no-undef
-    children: JSX.Element | JSX.Element[];
+    children: JSX.Element | JSX.Element[]
 }
 
 const CityWeatherDetailRowContainer: React.FC<CityWeatherDetailRowContainerProps> = ({

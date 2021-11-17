@@ -4,9 +4,9 @@ import { useWeather } from '../../../../api/use-weather/useWeather'
 import { roundTemperature } from '../../../../utils/Utils'
 
 interface SelectCityListUIProps {
-    city: CityInterface;
-    temperatureInCelsius?: number;
-    onClick?: () => void;
+    city: CityInterface
+    temperatureInCelsius?: number
+    onClick?: () => void
 }
 
 const SelectCityListUI: React.FC<SelectCityListUIProps> = ({

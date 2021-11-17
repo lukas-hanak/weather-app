@@ -5,9 +5,9 @@ import { CityInterface, Country } from '../../interface/city/CityInterface'
 import { useWeather } from '../../api/use-weather/useWeather'
 
 interface CityWeatherProps {
-    selectedCity: CityInterface;
-    country: Country;
-    onShowCitySelect: () => void;
+    selectedCity: CityInterface
+    country: Country
+    onShowCitySelect: () => void
 }
 
 const CityWeather: React.FC<CityWeatherProps> = ({ selectedCity, country, onShowCitySelect }) => {

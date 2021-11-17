@@ -2,8 +2,8 @@ import React from 'react'
 import SelectCityHeaderSearchBar from './search-bar/SelectCityHeaderSearchBar'
 
 interface SelectCityHeaderProps {
-    title?: string;
-    onSearchCity: (text: string) => void;
+    title?: string
+    onSearchCity: (text: string) => void
 }
 
 const SelectCityHeader: React.FC<SelectCityHeaderProps> = ({ title, onSearchCity }) => {

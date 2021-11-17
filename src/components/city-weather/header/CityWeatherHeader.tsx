@@ -2,8 +2,8 @@ import React, { MouseEvent } from 'react'
 import PlaceIcon from '../../../assets/place-icon.svg'
 
 interface CityWeatherHeaderProps {
-    name: string;
-    onShowCitySelect: () => void;
+    name: string
+    onShowCitySelect: () => void
 }
 
 const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name, onShowCitySelect }) => {

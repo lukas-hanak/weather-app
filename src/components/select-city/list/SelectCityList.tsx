@@ -4,8 +4,8 @@ import { cities } from '../../../config/Cities'
 import { CityInterface } from '../../../interface/city/CityInterface'
 
 interface SelectCityProps {
-    searchCity?: string;
-    onSelectCity?: (city: CityInterface) => void;
+    searchCity?: string
+    onSelectCity?: (city: CityInterface) => void
 }
 
 const SelectCityList: React.FC<SelectCityProps> = ({ searchCity, onSelectCity }) => {
