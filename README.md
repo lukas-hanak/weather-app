@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Weather App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Proxy server in development environment
+
+In the development environment, it is necessary to use a proxy server due to the API, which needs to be activated after clicking on the link below
+
+https://cors-anywhere.herokuapp.com/
 
 ## Available Scripts
 

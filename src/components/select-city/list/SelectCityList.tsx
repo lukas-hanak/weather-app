@@ -1,23 +1,23 @@
 import React from 'react'
 import SelectCityListUI from './ui/SelectCityListUI'
 import { cities } from '../../../config/Cities'
+import { CityInterface } from '../../../interface/city/CityInterface'
 
 interface SelectCityProps {
     searchCity?: string;
-    onSelectCity?: (city: string) => void;
+    onSelectCity?: (city: CityInterface) => void;
 }
 
 const SelectCityList: React.FC<SelectCityProps> = ({ searchCity, onSelectCity }) => {
 
     const renderCities = () => (
         cities.map((city, index) => {
-            if ((searchCity && city.toLocaleLowerCase().includes(searchCity.toLocaleLowerCase())) || !searchCity)
+            if ((searchCity && city.name.toLocaleLowerCase().includes(searchCity.toLocaleLowerCase())) || !searchCity)
                 return (
                     <SelectCityListUI
                         key={index.toString()}
                         city={city}
-                        temperatureInCelsius={Math.floor(Math.random() * 11)}
-                        onClick={city => onSelectCity && onSelectCity(city)}
+                        onClick={() => onSelectCity && onSelectCity(city)}
                     />
                 )
             return null

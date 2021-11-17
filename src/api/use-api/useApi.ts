@@ -1,9 +1,9 @@
 import api from '../Api'
 import { makeUseAxios } from 'axios-hooks'
 
-const UseApi = makeUseAxios({
+const useApi = makeUseAxios({
     axios: api,
     defaultOptions: { useCache: false }
 })
 
-export default UseApi
+export default useApi

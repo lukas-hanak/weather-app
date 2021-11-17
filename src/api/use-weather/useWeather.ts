@@ -1,21 +1,25 @@
-import UseApi from '../use-api/UseApi'
 import { useEffect, useState } from 'react'
 import { AxiosError } from 'axios'
+import useApi from '../use-api/useApi'
+import { CityWeatherInterface } from '../../interface/weather-interface/Weatherinterface'
 
-export const useWeather = (q: string): [string, boolean, (AxiosError | null)] =>  {
-    const [city, setCity] = useState('')
+export const useWeather = (lat: number, lon: number): [(CityWeatherInterface | null), boolean, (AxiosError | null)] =>  {
+    const [cityWeather, setCityWeather] = useState<CityWeatherInterface | null>(null)
 
     const [
         { data: getResult, loading: isLoading, error }
-    ] = UseApi({
+    ] = useApi({
         method: 'GET',
-        params: { q }
+        params: { lat: lat ? lat : 0, lon: lon ? lon : 0 }
     })
 
     useEffect(() => {
-        if (getResult && getResult.cod && getResult.cod === 200)
-            setCity(getResult)
-    }, [getResult, error])
+        getResult && setCityWeather(getResult)
+    }, [getResult])
 
-    return [city, isLoading, error]
+    useEffect(() => {
+        error && error.message && alert(error.message)
+    },[error])
+
+    return [cityWeather, isLoading, error]
 }
