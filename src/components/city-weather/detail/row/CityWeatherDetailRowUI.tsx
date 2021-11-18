@@ -2,8 +2,7 @@ import React from 'react'
 
 interface CityWeatherDetailRowUIProps {
     style?: string
-    // eslint-disable-next-line no-undef
-    children: JSX.Element | JSX.Element[]
+    children: React.ReactNode
 }
 
 const CityWeatherDetailRowUI: React.FC<CityWeatherDetailRowUIProps> = ({
@@ -11,7 +10,7 @@ const CityWeatherDetailRowUI: React.FC<CityWeatherDetailRowUIProps> = ({
     children
 }) => {
     return (
-        <div className={`${style}`}>
+        <div className={style ? style : ''}>
             {children}
         </div>
     )

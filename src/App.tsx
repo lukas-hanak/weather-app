@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import cityBackground from './assets/city-background.png'
 import './App.css'
+import cityBackground from './assets/city-background.png'
 import CityWeather from './components/city-weather/CityWeather'
 import SelectCity from './components/select-city/SelectCity'
 import { cities } from './config/Cities'

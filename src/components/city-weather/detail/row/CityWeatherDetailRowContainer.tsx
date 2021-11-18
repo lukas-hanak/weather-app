@@ -2,8 +2,7 @@ import React from 'react'
 
 interface CityWeatherDetailRowContainerProps {
     style?: string
-    // eslint-disable-next-line no-undef
-    children: JSX.Element | JSX.Element[]
+    children: React.ReactNode
 }
 
 const CityWeatherDetailRowContainer: React.FC<CityWeatherDetailRowContainerProps> = ({
@@ -11,7 +10,7 @@ const CityWeatherDetailRowContainer: React.FC<CityWeatherDetailRowContainerProps
     children
 }) => {
     return (
-        <div className={`d-flex mt-3 justify-content-center align-items-center ${style}`}>
+        <div className={`d-flex mt-3 justify-content-center align-items-center ${style ? style : ''}`}>
             {children}
         </div>
     )
