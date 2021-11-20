@@ -30,5 +30,25 @@ export const cities: CityInterface[] = [
         name: 'Sobrance',
         lat: 48.745769,
         lon: 22.179478
+    },
+    {
+        name: 'Brno',
+        lat: 49.195061,
+        lon: 16.606836
+    },
+    {
+        name: 'Němčice nad Hanou',
+        lat: 49.34181,
+        lon: 17.20596
+    },
+    {
+        name: 'Gbely',
+        lat: 48.718,
+        lon: 17.11628
+    },
+    {
+        name: 'Petrohrad',
+        lat: 59.937500,
+        lon: 30.308611
     }
 ]

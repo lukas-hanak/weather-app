@@ -1,5 +1,5 @@
 import React from 'react'
-import SelectCityHeaderSearchBar from './search-bar/SelectCityHeaderSearchBar'
+import SelectCityHeaderSearchBar from './searchBar/SelectCityHeaderSearchBar'
 
 interface SelectCityHeaderProps {
     title?: string
