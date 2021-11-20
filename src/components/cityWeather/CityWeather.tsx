@@ -25,7 +25,7 @@ const CityWeather: React.FC<CityWeatherProps> = ({ selectedCity, country, onShow
     return (
         <div className='city-weather-container shadow text-center'>
             <CityWeatherHeader
-                name={`${selectedCity.name}, ${country}`}
+                name={`${selectedCity.name}, ${selectedCity.country}`}
                 onShowCitySelect={onShowCitySelect}
             />
             <CityWeatherDetail cityWeather={cityWeather} />
