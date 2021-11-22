@@ -3,7 +3,7 @@ import { config } from '../config/Config'
 
 const api = axios.create({
     baseURL: config.weatherApiUrl,
-    timeout: 3000,
+    timeout: 0,
     headers: {
         'Content-Type': 'application/json;charset=utf-8',
         'X-Requested-With': '*',
