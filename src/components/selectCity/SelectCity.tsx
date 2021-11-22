@@ -9,13 +9,13 @@ interface SelectCityProps {
 
 const SelectCity: React.FC<SelectCityProps> = ({ onSelectCity }) => {
 
-    const [searchCity, setSearchCity] = React.useState('')
+    const [searchCity, setSearchCity] = React.useState<string | null>(null)
 
     return (
         <div className='select-city-container shadow'>
             <SelectCityHeader
                 title='Location'
-                onSearchCity={text => setSearchCity(text)}
+                onSearchCity={setSearchCity}
             />
             <SelectCityList
                 searchCity={searchCity}

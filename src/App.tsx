@@ -8,7 +8,6 @@ import { CityInterface } from './interface/city/CityInterface'
 
 const App = () => {
 
-    const country = 'Slovakia'
     const [selectedCity, setSelectedCity] = useState(cities[0])
     const [showCityWeather, setShowCityWeather] = useState(true)
 
@@ -21,22 +20,17 @@ const App = () => {
         setSelectedCity(city)
     }
 
-    const renderMain = () => {
-        return showCityWeather ? (
-            <CityWeather
-                selectedCity={selectedCity}
-                country={country}
-                onShowCitySelect={switchCityWeatherAndSelectCityScreen}
-            />
-        ) : (
-            <SelectCity onSelectCity={onSelectCity} />
-        )
-    }
-
     return (
         <div className='app'>
             <img src={cityBackground} className='img-fluid image-bg' alt='image-background' />
-            {renderMain()}
+            {showCityWeather ? (
+                <CityWeather
+                    city={selectedCity}
+                    onShowCitySelect={switchCityWeatherAndSelectCityScreen}
+                />
+            ) : (
+                <SelectCity onSelectCity={onSelectCity} />
+            )}
         </div>
     )
 }

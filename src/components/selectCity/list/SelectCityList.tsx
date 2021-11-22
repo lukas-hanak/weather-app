@@ -4,7 +4,7 @@ import { cities } from '../../../config/Cities'
 import { CityInterface } from '../../../interface/city/CityInterface'
 
 interface SelectCityProps {
-    searchCity?: string
+    searchCity?: string | null
     onSelectCity?: (city: CityInterface) => void
 }
 

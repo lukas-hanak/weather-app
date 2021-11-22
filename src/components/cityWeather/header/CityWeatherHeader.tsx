@@ -3,7 +3,7 @@ import PlaceIcon from '../../../assets/place-icon.svg'
 
 interface CityWeatherHeaderProps {
     name: string
-    onShowCitySelect: () => void
+    onShowCitySelect?: () => void
 }
 
 const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name, onShowCitySelect }) => {
@@ -22,7 +22,7 @@ const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name, onShowCityS
 
     const onCityButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
-        onShowCitySelect()
+        onShowCitySelect && onShowCitySelect()
     }
 
     return (
@@ -30,7 +30,7 @@ const CityWeatherHeader: React.FC<CityWeatherHeaderProps> = ({ name, onShowCityS
             <p className='p-2 header-time'>{getDate()}</p>
             <button className='header-name-button' onClick={onCityButtonClick}>
                 <h2 className='p-2 header-city-name'>
-                    {name}
+                    {name || ''}
                     <img src={PlaceIcon} alt='place-icon' className='mx-2' />
                 </h2>
             </button>

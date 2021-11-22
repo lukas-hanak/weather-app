@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CityInterface } from '../../../../interface/city/CityInterface'
-import { useWeather } from '../../../../api/use-weather/useWeather'
+import { useWeather } from '../../../../api/useWeather/useWeather'
 import { roundTemperature } from '../../../../utils/Utils'
 
 interface SelectCityListUIProps {
@@ -14,7 +14,14 @@ const SelectCityListUI: React.FC<SelectCityListUIProps> = ({
     onClick
 }) => {
 
-    const [cityWeather, isCityLoading, cityError] = useWeather(city.lat, city.lon)
+    const [cityWeather, isCityLoading, cityError, executeCityWeather] = useWeather(city.lat, city.lon)
+
+    // INFO:
+    // When load the component, we fetch all the weather data in that location
+    // For this action we are using hook useWeather
+    useEffect(() => {
+        executeCityWeather()
+    }, [])
 
     const onClickInternal = (event: React.MouseEvent<HTMLLIElement>) => {
         event.preventDefault()
@@ -25,12 +32,12 @@ const SelectCityListUI: React.FC<SelectCityListUIProps> = ({
         const temperature = cityWeather
             ? roundTemperature(cityWeather.current.temp)
             : null
-        return temperature ? (
-            <p className='select-city-list-ui-temperature'>{`${temperature}°C`}</p>
-        ) : null
-    }
-
-    if (!cityWeather || isCityLoading || cityError) {
+        if (isCityLoading)
+            return <div className='spinner-border text-primary' role='status'/>
+        if (cityError && cityError.message)
+            return <p className='text-danger'>{cityError.message}</p>
+        if (temperature)
+            return <p className='select-city-list-ui-temperature'>{`${temperature}°C`}</p>
         return null
     }
 

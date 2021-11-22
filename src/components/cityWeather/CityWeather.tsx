@@ -1,34 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CityWeatherHeader from './header/CityWeatherHeader'
 import CityWeatherDetail from './detail/CityWeatherDetail'
-import { CityInterface, Country } from '../../interface/city/CityInterface'
-import { useWeather } from '../../api/use-weather/useWeather'
+import { CityInterface } from '../../interface/city/CityInterface'
+import { useWeather } from '../../api/useWeather/useWeather'
 
 interface CityWeatherProps {
-    selectedCity: CityInterface
-    country: Country
-    onShowCitySelect: () => void
+    city: CityInterface
+    onShowCitySelect?: () => void
 }
 
-const CityWeather: React.FC<CityWeatherProps> = ({ selectedCity, country, onShowCitySelect }) => {
+const CityWeather: React.FC<CityWeatherProps> = ({ city, onShowCitySelect }) => {
 
-    const [cityWeather, isCityLoading, cityError] = useWeather(selectedCity.lat, selectedCity.lon)
+    const [cityWeather, isCityWeatherLoading, cityWeatherError, executeCityWeather] = useWeather(city.lat, city.lon)
 
-    if (!cityWeather || isCityLoading || cityError) {
+    // INFO:
+    // When load the component, we fetch all the weather data in that location
+    // For this action we are using hook useWeather
+    useEffect(() => {
+        executeCityWeather()
+    }, [])
+
+    if (!cityWeather || isCityWeatherLoading)
         return (
             <div className='loading-container'>
                 <div className='spinner-border text-primary' role='status'/>
             </div>
         )
-    }
 
     return (
         <div className='city-weather-container shadow text-center'>
-            <CityWeatherHeader
-                name={`${selectedCity.name}, ${selectedCity.country}`}
-                onShowCitySelect={onShowCitySelect}
-            />
-            <CityWeatherDetail cityWeather={cityWeather} />
+            {!cityWeatherError ? (
+                <>
+                    <CityWeatherHeader
+                        name={`${city.name}, ${city.country}`}
+                        onShowCitySelect={onShowCitySelect}
+                    />
+                    <CityWeatherDetail cityWeather={cityWeather}/>
+                </>
+            ) : cityWeatherError.message  && (
+                <p className='text-danger'>{cityWeatherError.message}</p>
+            )}
         </div>
     )
 }

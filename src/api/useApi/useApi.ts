@@ -1,4 +1,4 @@
-import api from '../Api'
+import api from '../api'
 import { makeUseAxios } from 'axios-hooks'
 
 const useApi = makeUseAxios({
