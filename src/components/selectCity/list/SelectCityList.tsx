@@ -1,7 +1,7 @@
 import React from 'react'
 import SelectCityListUI from './ui/SelectCityListUI'
-import { cities } from '../../../config/Cities'
-import { CityInterface } from '../../../interface/city/CityInterface'
+import { cities } from '../../../config/cities'
+import { CityInterface } from '../../../interface/city/cityInterface'
 
 interface SelectCityProps {
     searchCity?: string | null

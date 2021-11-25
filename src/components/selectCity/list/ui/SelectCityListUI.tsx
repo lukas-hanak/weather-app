@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { CityInterface } from '../../../../interface/city/CityInterface'
+import { CityInterface } from '../../../../interface/city/cityInterface'
 import { useWeather } from '../../../../api/useWeather/useWeather'
-import { roundTemperature } from '../../../../utils/Utils'
+import { roundTemperature } from '../../../../utils/utils'
 
 interface SelectCityListUIProps {
     city: CityInterface

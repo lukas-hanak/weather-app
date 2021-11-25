@@ -1,7 +1,7 @@
 import React from 'react'
 import CityWeatherDetailRowContainer from './row/CityWeatherDetailRowContainer'
 import CityWeatherDetailRowUI from './row/CityWeatherDetailRowUI'
-import { CityWeatherInterface, DailyEntityInterface } from '../../../interface/weather-interface/Weatherinterface'
+import { CityWeatherInterface, DailyEntityInterface } from '../../../interface/weatherInterface/weatherinterface'
 import moment from 'moment'
 import CloudIcon from '../../../assets/cloud.svg'
 import ArrowUpIcon from '../../../assets/arrow-up.svg'
@@ -15,7 +15,7 @@ import DayTime from '../../../assets/daytime.svg'
 import UnionIcon from '../../../assets/union.svg'
 import SecondCloudIcon from '../../../assets/cloud-2.svg'
 import AirIcon from '../../../assets/air.svg'
-import { roundTemperature } from '../../../utils/Utils'
+import { roundTemperature } from '../../../utils/utils'
 
 interface CityWeatherDetailProps {
     cityWeather: CityWeatherInterface

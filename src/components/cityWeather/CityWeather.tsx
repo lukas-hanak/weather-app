@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import CityWeatherHeader from './header/CityWeatherHeader'
 import CityWeatherDetail from './detail/CityWeatherDetail'
-import { CityInterface } from '../../interface/city/CityInterface'
+import { CityInterface } from '../../interface/city/cityInterface'
 import { useWeather } from '../../api/useWeather/useWeather'
 
 interface CityWeatherProps {

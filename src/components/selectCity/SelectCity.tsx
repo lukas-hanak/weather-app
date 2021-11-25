@@ -1,7 +1,7 @@
 import React from 'react'
 import SelectCityHeader from './header/SelectCityHeader'
 import SelectCityList from './list/SelectCityList'
-import { CityInterface } from '../../interface/city/CityInterface'
+import { CityInterface } from '../../interface/city/cityInterface'
 
 interface SelectCityProps {
     onSelectCity?: (city: CityInterface) => void
