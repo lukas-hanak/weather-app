@@ -4,5 +4,5 @@ const weatherApi = {
 }
 
 export const config = {
-    weatherApiUrl: `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/onecall?appid=${weatherApi.key}&units=${weatherApi.units}`
+    weatherApiUrl: `http://api.openweathermap.org/data/2.5/onecall?appid=${weatherApi.key}&units=${weatherApi.units}`
 }

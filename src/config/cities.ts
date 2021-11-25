@@ -2,40 +2,22 @@ import { CityInterface } from '../interface/city/cityInterface'
 
 export const cities: CityInterface[] = [
     {
-        name: 'Bratislava',
-        country: 'Slovakia',
-        lat: 48.148598,
-        lon: 17.107748
+        name: 'Prague',
+        country: 'Czechia',
+        lat: 50.073658,
+        lon: 14.418540
     },
     {
-        name: 'Humenné',
-        country: 'Slovakia',
-        lat: 48.932454,
-        lon: 21.907892
+        name: 'Olomouc',
+        country: 'Czechia',
+        lat: 49.59552,
+        lon: 17.25175
     },
     {
-        name: 'Koromľa',
-        country: 'Slovakia',
-        lat: 48.7167,
-        lon: 22.3000
-    },
-    {
-        name: 'Košice',
-        country: 'Slovakia',
-        lat: 48.716385,
-        lon: 21.261074
-    },
-    {
-        name: 'Michalovce',
-        country: 'Slovakia',
-        lat: 48.755677,
-        lon: 21.918386
-    },
-    {
-        name: 'Sobrance',
-        country: 'Slovakia',
-        lat: 48.745769,
-        lon: 22.179478
+        name: 'Ostrava',
+        country: 'Czechia',
+        lat: 49.820923,
+        lon: 18.262524
     },
     {
         name: 'Brno',
@@ -56,9 +38,21 @@ export const cities: CityInterface[] = [
         lon: 17.11628
     },
     {
-        name: 'Petrohrad',
-        country: 'Russia',
+        name: 'Bratislava',
+        country: 'Slovakia',
         lat: 59.937500,
         lon: 30.308611
+    },
+    {
+        name: 'Košice',
+        country: 'Slovakia',
+        lat: 48.716385,
+        lon: 21.261074
+    },
+    {
+        name: 'Michalovce',
+        country: 'Slovakia',
+        lat: 48.755677,
+        lon: 21.918386
     }
 ]

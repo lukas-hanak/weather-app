@@ -1,7 +1,7 @@
 import React from 'react'
+import { CityWeatherInterface, DailyEntityInterface } from '../../../interface/weatherInterface/weatherInterface'
 import CityWeatherDetailRowContainer from './row/CityWeatherDetailRowContainer'
 import CityWeatherDetailRowUI from './row/CityWeatherDetailRowUI'
-import { CityWeatherInterface, DailyEntityInterface } from '../../../interface/weatherInterface/weatherinterface'
 import moment from 'moment'
 import CloudIcon from '../../../assets/cloud.svg'
 import ArrowUpIcon from '../../../assets/arrow-up.svg'

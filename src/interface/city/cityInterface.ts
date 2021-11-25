@@ -1,4 +1,4 @@
-export type Country = 'Slovakia' | 'Czechia' | 'Russia'
+export type Country = 'Slovakia' | 'Czechia'
 
 export interface CityInterface {
     name: string

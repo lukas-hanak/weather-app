@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { AxiosError } from 'axios'
 import useApi from '../useApi/useApi'
-import { CityWeatherInterface } from '../../interface/weatherInterface/weatherinterface'
+import { CityWeatherInterface } from '../../interface/weatherInterface/weatherInterface'
 
 export const useWeather = (lat: number, lon: number): [
     (CityWeatherInterface | null),
